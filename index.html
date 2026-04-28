@@ -1,21 +1,31 @@
-<a-entity id="jugador" position="0 0 0" wasd-controls>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Joystick A-Frame</title>
 
-  <!-- Cámara -->
-  <a-entity camera position="0 1.6 0" look-controls></a-entity>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-virtual-joystick/dist/aframe-virtual-joystick.min.js"></script>
 
-  <!-- Personaje visible -->
-  <a-entity position="0 0 -2">
+</head>
+<body>
 
-    <!-- Cabeza -->
-    <a-sphere position="0 1.6 0" radius="0.3" color="#FFC65D"></a-sphere>
+<a-scene>
 
-    <!-- Cuerpo -->
-    <a-box position="0 0.9 0" height="1" width="0.5" depth="0.3" color="#4CC3D9"></a-box>
+  <!-- Jugador con joystick -->
+  <a-entity id="rig" position="0 0 0" virtual-joystick>
 
-    <!-- Piernas -->
-    <a-box position="-0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
-    <a-box position="0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
+    <!-- Cámara -->
+    <a-entity camera look-controls position="0 1.6 0"></a-entity>
 
   </a-entity>
 
-</a-entity>
+  <!-- Escenario -->
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
+  <a-box position="0 0.5 -3" color="#4CC3D9"></a-box>
+  <a-sky color="#ECECEC"></a-sky>
+
+</a-scene>
+
+</body>
+</html>

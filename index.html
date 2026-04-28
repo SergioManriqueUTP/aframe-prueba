@@ -1,18 +1,21 @@
-<a-entity id="personaje" position="0 0 -5">
+<a-entity id="jugador" position="0 0 0" wasd-controls>
 
-  <!-- Cabeza -->
-  <a-sphere position="0 1.6 0" radius="0.3" color="#FFC65D"></a-sphere>
+  <!-- Cámara -->
+  <a-entity camera position="0 1.6 0" look-controls></a-entity>
 
-  <!-- Cuerpo -->
-  <a-box position="0 0.9 0" height="1" width="0.5" depth="0.3" color="#4CC3D9"></a-box>
+  <!-- Personaje visible -->
+  <a-entity position="0 0 -2">
 
-  <!-- Piernas -->
-  <a-box position="-0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
-  <a-box position="0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
+    <!-- Cabeza -->
+    <a-sphere position="0 1.6 0" radius="0.3" color="#FFC65D"></a-sphere>
+
+    <!-- Cuerpo -->
+    <a-box position="0 0.9 0" height="1" width="0.5" depth="0.3" color="#4CC3D9"></a-box>
+
+    <!-- Piernas -->
+    <a-box position="-0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
+    <a-box position="0.15 0.3 0" height="0.6" width="0.2" depth="0.2" color="#333"></a-box>
+
+  </a-entity>
 
 </a-entity>
-
-<a-entity id="personaje" position="0 0 -5" wasd-controls>
-
-  <a-entity id="personaje" position="0 0 -5" wasd-controls
-  animation="property: position; dir: alternate; dur: 300; loop: true; to: 0 0.1 -5">

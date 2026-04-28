@@ -2,26 +2,42 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Robot 3D</title>
-  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
-</head>
-<body>
+  <title>Robot con Joystick</title>
 
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-virtual-joystick/dist/aframe-virtual-joystick.min.js"></script>
+</head>
+
+<body>
 <a-scene>
 
   <a-assets>
     <a-asset-item id="robot" src="Robot.glb"></a-asset-item>
   </a-assets>
 
-  <a-entity 
-    gltf-model="#robot"
-    position="0 0 -5"
-    scale="0.01 0.01 0.01">
+  <!-- RIG (jugador que se mueve) -->
+  <a-entity id="rig" position="0 0 0" virtual-joystick>
+
+    <!-- Cámara -->
+    <a-entity camera position="0 1.6 0" look-controls></a-entity>
+
+    <!-- Robot -->
+    <a-entity 
+      gltf-model="#robot"
+      position="0 0 -2"
+      scale="0.5 0.5 0.5">
+    </a-entity>
+
   </a-entity>
+
+  <!-- Piso -->
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
 
   <a-sky color="#ECECEC"></a-sky>
 
 </a-scene>
+</body>
+</html>
 
 </body>
 </html>
